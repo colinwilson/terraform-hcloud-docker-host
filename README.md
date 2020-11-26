@@ -1,9 +1,9 @@
 # terraform-hcloud-docker-host
-A Terraform module to deploy a single Docker host (in swarm mode) on Hetzner Cloud. A separate Hetzner Cloud volume is created and attached to the host as storage for Docker volumes See the variables file for the available configuration settings.
+A Terraform module to deploy a single Docker host (in swarm mode) on Hetzner Cloud. A separate Hetzner Cloud volume is also created, attached and configured as the Docker root directory. See the variables file for the available configuration settings.
 
 The resources/services/activations/deletions that this module will create/trigger are:
 
-- Create a server on the Hetzner Cloud Platform
+- Create a server and cloud volume on the Hetzner Cloud Platform
 - Create or use an existing SSH Public Key
 - Installer Docker Compose, Docker and enable Docker Swarm mode
 
