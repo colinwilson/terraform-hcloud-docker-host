@@ -4,7 +4,7 @@ A Terraform module to deploy a single Docker host (in swarm mode) on Hetzner Clo
 The resources/services/activations/deletions that this module will create/trigger are:
 
 - Create a server on the Hetzner Cloud Platform
-- Create or use an existing SSH Key pair
+- Create or use an existing SSH Public Key
 - Installer Docker Compose, Docker and enable Docker Swarm mode
 
 ## Tutorial
@@ -21,7 +21,7 @@ Basic usage of this module is as follows:
 ```hcl
 module "hcloud-docker-host" {
   source  = "github.com/colinwilson/terraform-hcloud-docker-host"
-  version = "~> 0.1.2"
+  version = "~> 0.1.3"
 
   server              = = {
     name               = "docker-swarm-host-01"
@@ -32,7 +32,6 @@ module "hcloud-docker-host" {
   }
   ssh_public_key_name = "my_ssh_key"
   ssh_public_key      = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJNcwP5mhs5/F2T9GFHmg4z6E6sbOG+Ynx2iPERKeOGm"
-  ssh_private_key     = "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW\nQyNTUxOQAAACCTXMD+ZobOfxdk/RhR5oOM+hOrGzhvmJ8dojxESnjhpgAAAKAT7qvkE+6r\n5AAAAAtzc2gtZWQyNTUxOQAAACCTXMD+ZobOfxdk/RhR5oOM+hOrGzhvmJ8dojxESnjhpg\nAAAEA3uuisz1EbVpmyvAkAdhF29CCKN0oR9+fdGVcDkF8YBZNcwP5mhs5/F2T9GFHmg4z6\nE6sbOG+Ynx2iPERKeOGmAAAAG2NvbGlud2lsc29uQERFU0tUT1AtMUZUQUo3TwEC\n-----END OPENSSH PRIVATE KEY-----"
   volume_size         = 20
   volume_filesystem   = "xfs"
 
@@ -50,7 +49,6 @@ A Functional example is included in the
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | ssh_public_key | SSH Public Key. | string | n/a | yes |
-| ssh_private_key | SSH Private Key. | string | n/a | yes |
 
 ### Optional
 

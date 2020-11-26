@@ -4,11 +4,6 @@ variable "ssh_public_key" {
   description = "SSH Public Key"
 }
 
-variable "ssh_private_key" {
-  type        = string
-  description = "SSH Private Key"
-}
-
 # Optional configuration
 variable "server" {
   type        = map(any)

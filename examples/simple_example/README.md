@@ -8,7 +8,6 @@ This example illustrates how to use the `terraform-hcloud-docker-host` module.
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | ssh_public_key | SSH Public Key. | string | n/a | yes |
-| ssh_private_key | SSH Private Key. | string | n/a | yes |
 
 ## Outputs
 

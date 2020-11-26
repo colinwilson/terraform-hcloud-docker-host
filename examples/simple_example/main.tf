@@ -13,5 +13,4 @@ provider "hcloud" {
 module "hcloud-docker-host" {
   source = "github.com/colinwilson/terraform-hcloud-docker-host"
   ssh_public_key      = var.ssh_public_key
-  ssh_private_key     = var.ssh_private_key
 }

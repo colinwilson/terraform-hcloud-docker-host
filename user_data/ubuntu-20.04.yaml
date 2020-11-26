@@ -25,6 +25,10 @@ runcmd:
   - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
   - apt-get update -y
   - apt-get install -y docker-ce docker-ce-cli containerd.io
+  - mkfs.${volume_filesystem} -f ${linux_device}
+  - mkdir /mnt/docker_data_volume
+  - mount -o discard,defaults ${linux_device} /mnt/docker_data_volume
+  - echo '${linux_device} /mnt/docker_data_volume ${volume_filesystem} discard,nofail,defaults 0 0' >> /etc/fstab
   - sed -i -e "s|ExecStart=/usr/bin/dockerd|ExecStart=/usr/bin/dockerd --data-root=/mnt/docker_data_volume|g" /lib/systemd/system/docker.service
   - systemctl daemon-reload
   - systemctl restart docker
