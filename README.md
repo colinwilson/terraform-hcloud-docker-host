@@ -9,7 +9,7 @@ The resources/services/activations/deletions that this module will create/trigge
 
 ## Tutorial
 
-https://colinwilson.uk/2020/10/31/provision-a-docker-swarm-host-with-traefik-v2-on-hetzner-cloud-using-terraform-modules-part-1
+[Provision a Docker Swarm Host with Traefik (v2) on Hetzner Cloud using Terraform Modules - Part 1](https://colinwilson.uk/2020/10/31/provision-a-docker-swarm-host-with-traefik-v2-on-hetzner-cloud-using-terraform-modules-part-1)
 ## Compatibility
 
 This module is meant for use with Terraform 0.13 or higher.
