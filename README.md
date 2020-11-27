@@ -21,7 +21,7 @@ Basic usage of this module is as follows:
 ```hcl
 module "hcloud-docker-host" {
   source  = "github.com/colinwilson/terraform-hcloud-docker-host"
-  version = "~> 0.1.3"
+  version = "~> 0.1.4"
 
   server              = = {
     name               = "docker-swarm-host-01"
