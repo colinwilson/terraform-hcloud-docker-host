@@ -39,7 +39,7 @@ module "hcloud-docker-host" {
 ```
 
 A Functional example is included in the
-[examples](./examples/) directory.
+[examples](./examples/) directory or clone the **docker-host** branch [here](https://github.com/colinwilson/example-terraform-modules)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
@@ -57,7 +57,7 @@ A Functional example is included in the
 | server | Server configuration map. | map(any) | <code lang="hcl">{name = "docker-host", server_type = "cx11", image = "ubuntu-20.04", location = "nbg1", backups = false}</code> | no |
 | docker_compose_version | Docker compose version to install. | string | `"1.27.4"` | no |
 | volume_size | Volume size (GB) (min 10, max 10240). | number | `10` | no |
-| volume_filesystem | Volume filesystem. | string | `"ext4"` | no |
+| volume_filesystem | Volume filesystem. | string | `"xfs"` | no |
 | ssh_public_key_name | SSH Public Key Name. | string | `"default"` | no |
 
 ## Outputs
@@ -83,7 +83,7 @@ The following dependencies must be available:
 
 ### Hetzner Cloud Account
 
-A [Hetzner Cloud account](https://accounts.hetzner.com/signUp) with an API Token (with Read & Write permissions) to provision
+A [Hetzner Cloud account](https://accounts.hetzner.com/signUp) and [API Token](https://colinwilson.uk/2020/10/31/generate-an-api-token-in-hetzner-cloud/) (with Read & Write permissions) to provision
 the resources of this module.
 
 
