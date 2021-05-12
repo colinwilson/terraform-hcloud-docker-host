@@ -20,7 +20,7 @@ variable "server" {
 variable "docker_compose_version" {
   type = string
   description = "Docker compose version to install"
-  default = "1.29.1" # https://github.com/docker/compose/releases/latest
+  default = "1.29.2" # https://github.com/docker/compose/releases/latest
 }
 
 variable "volume_size" {
