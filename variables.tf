@@ -18,25 +18,25 @@ variable "server" {
 }
 
 variable "docker_compose_version" {
-  type = string
+  type        = string
   description = "Docker compose version to install"
-  default = "1.29.2" # https://github.com/docker/compose/releases/latest
+  default     = "1.29.2" # https://github.com/docker/compose/releases/latest
 }
 
 variable "volume_size" {
-  type = number
+  type        = number
   description = "Volume size (GB) (min 10, max 10240)"
-  default = 10 # https://docs.hetzner.cloud/#volumes-create-a-volume
+  default     = 10 # https://docs.hetzner.cloud/#volumes-create-a-volume
   validation {
-    condition = ceil(var.volume_size) == var.volume_size
+    condition     = ceil(var.volume_size) == var.volume_size
     error_message = "Volume size must be a whole number between 10 and 10240."
   }
   validation {
-    condition = var.volume_size >= 10
+    condition     = var.volume_size >= 10
     error_message = "Volume size value too small. The minimum volume size is 10 (10GB)."
   }
   validation {
-    condition = var.volume_size <= 10240
+    condition     = var.volume_size <= 10240
     error_message = "Volume size value too large. The maximum volume size is 10240 (10TB)."
   }
 }

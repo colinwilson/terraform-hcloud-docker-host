@@ -18,7 +18,7 @@ resource "hcloud_server" "server" {
   location    = var.server.location
   backups     = var.server.backups
   ssh_keys    = [var.ssh_public_key_name]
-  user_data   = templatefile("${path.module}/user_data/${var.server.image}.yaml", {
+  user_data = templatefile("${path.module}/user_data/${var.server.image}.yaml", {
     docker_compose_version = var.docker_compose_version
     volume_filesystem      = var.volume_filesystem
     filesystem_cmd_opt     = var.volume_filesystem == "xfs" ? "-f" : "-F"
