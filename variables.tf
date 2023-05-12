@@ -11,7 +11,7 @@ variable "server" {
   default = {
     name        = "docker-host"
     server_type = "cx11"
-    image       = "ubuntu-20.04"
+    image       = "ubuntu-22.04"
     location    = "nbg1"
     backups     = false
   }
@@ -20,7 +20,7 @@ variable "server" {
 variable "docker_compose_version" {
   type        = string
   description = "Docker compose version to install"
-  default     = "1.29.2" # https://github.com/docker/compose/releases/latest
+  default     = "2.17.3" # https://github.com/docker/compose/releases/latest
 }
 
 variable "volume_size" {

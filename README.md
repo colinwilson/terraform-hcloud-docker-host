@@ -23,7 +23,7 @@ module "hcloud-docker-host" {
   source  = "github.com/colinwilson/terraform-hcloud-docker-host"
   version = "~> 0.1.4"
 
-  server              = = {
+  server               = {
     name               = "docker-swarm-host-01"
     server_type        = "cx11"
     image              = "ubuntu-20.04"
@@ -55,7 +55,7 @@ A Functional example is included in the
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | server | Server configuration map. | map(any) | <code lang="hcl">{name = "docker-host", server_type = "cx11", image = "ubuntu-20.04", location = "nbg1", backups = false}</code> | no |
-| docker_compose_version | Docker compose version to install. | string | `"1.29.2"` | no |
+| docker_compose_version | Docker compose version to install. | string | `"2.17.3"` | no |
 | volume_size | Volume size (GB) (min 10, max 10240). | number | `10` | no |
 | volume_filesystem | Volume filesystem. | string | `"xfs"` | no |
 | ssh_public_key_name | SSH Public Key Name. | string | `"default"` | no |
